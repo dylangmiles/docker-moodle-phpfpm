@@ -26,7 +26,7 @@ RUN apt-get update -y && \
     php5-xmlrpc \
     php5-xcache \
     php5-tidy \
-    php5-Intl
+    php5-Intl \
     php-pear
 
 
