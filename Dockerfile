@@ -46,7 +46,7 @@ RUN sed -i "s/;date.timezone =.*/date.timezone = UTC/" /etc/php5/fpm/php.ini && 
     sed -i "s/;opcache.enable=0/opcache.enable=1/" /etc/php5/fpm/php.ini && \
     sed -i "s/;opcache.memory_consumption=64/opcache.memory_consumption=128/" /etc/php5/fpm/php.ini && \
     sed -i "s/;opcache.max_accelerated_files=2000/opcache.max_accelerated_files=8000/" /etc/php5/fpm/php.ini && \
-    sed -i "s/;opcache.revalidate_freq = 2/opcache.revalidate_freq = 60/" /etc/php5/fpm/php.ini && \
+    sed -i "s/;opcache.revalidate_freq=2/opcache.revalidate_freq=60/" /etc/php5/fpm/php.ini && \
     sed -i "s/;opcache.use_cwd=1/opcache.use_cwd=1/" /etc/php5/fpm/php.ini && \
     sed -i "s/;opcache.validate_timestamps=1/opcache.validate_timestamps=1/" /etc/php5/fpm/php.ini && \
     sed -i "s/;opcache.save_comments=1/opcache.save_comments=1/" /etc/php5/fpm/php.ini && \
