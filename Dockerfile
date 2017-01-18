@@ -65,7 +65,7 @@ RUN   echo "xdebug.remote_host=debughost" >> /etc/php5/fpm/conf.d/20-xdebug.ini
 RUN   echo "xdebug.remote_autostart=1" >> /etc/php5/fpm/conf.d/20-xdebug.ini
 
 #DEBUG ONLY: Allow environment variables to be picked up in $_SERVER by php-fpm for debugging purposes (eg. $PHP_IDE_CONFIG)
-RUN sed -i "s/;clear_env = .*/;clear_env = no/" /etc/php5/fpm/pool.d/www.conf
+RUN sed -i "s/;clear_env.*=.*/clear_env = no/" /etc/php5/fpm/pool.d/www.conf
 
 RUN mkdir -p /data
 VOLUME ["/data"]
