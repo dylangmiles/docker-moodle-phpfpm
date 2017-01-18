@@ -60,10 +60,10 @@ RUN sed -i "s/;date.timezone =.*/date.timezone = UTC/" /etc/php5/fpm/php.ini && 
 
 # Configure XDebug
 RUN   echo "xdebug.remote_enable = 1" >> /etc/php5/fpm/conf.d/20-xdebug.ini
-#RUN   echo "xdebug.remote_connect_back = 1" >> /etc/php5/fpm/conf.d/20-xdebug.ini
 RUN   echo "xdebug.remote_port = 9000" >> /etc/php5/fpm/conf.d/20-xdebug.ini
 RUN   echo "xdebug.remote_host=debughost" >> /etc/php5/fpm/conf.d/20-xdebug.ini
-RUN   echo "xdebug.remote_log=/var/log/xdebug.log" >> /etc/php5/fpm/conf.d/20-xdebug.ini
+RUN   echo "xdebug.remote_autostart=1" >> /etc/php5/fpm/conf.d/20-xdebug.ini
+
 
 RUN mkdir -p /data
 VOLUME ["/data"]
