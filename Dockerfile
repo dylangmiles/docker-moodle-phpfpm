@@ -22,12 +22,12 @@ RUN apt-get update -y && \
     php5-pgsql \
     php5-redis \
     php5-sqlite \
-    php5-xdebug \
     php5-xmlrpc \
     php5-xcache \
     php5-tidy \
     php5-Intl \
-    php-pear
+    php-pear \
+    php5-xdebug
 
 
 # Install pear mail for some legacy applications
@@ -60,8 +60,10 @@ RUN sed -i "s/;date.timezone =.*/date.timezone = UTC/" /etc/php5/fpm/php.ini && 
 
 # Configure XDebug
 RUN   echo "xdebug.remote_enable = 1" >> /etc/php5/fpm/conf.d/20-xdebug.ini
-RUN   echo "xdebug.remote_connect_back = 1" >> /etc/php5/fpm/conf.d/20-xdebug.ini
+#RUN   echo "xdebug.remote_connect_back = 1" >> /etc/php5/fpm/conf.d/20-xdebug.ini
 RUN   echo "xdebug.remote_port = 9000" >> /etc/php5/fpm/conf.d/20-xdebug.ini
+RUN   echo "xdebug.remote_host=debughost" >> /etc/php5/fpm/conf.d/20-xdebug.ini
+RUN   echo "xdebug.remote_log=/var/log/xdebug.log" >> /etc/php5/fpm/conf.d/20-xdebug.ini
 
 RUN mkdir -p /data
 VOLUME ["/data"]
