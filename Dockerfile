@@ -30,9 +30,17 @@ RUN apt-get update -y && \
     php5-xdebug
 
 
+# Upgrade pear
+RUN pear upgrade --force --alldeps http://pear.php.net/get/PEAR-1.10.1
+    #&& pear clear-cache \
+    #&& pear update-channels \
+    #&& pear upgrade \
+    #&& pear upgrade-all
+
 # Install pear mail for some legacy applications
 RUN     pear install mail     \
     &&  pear install Net_SMTP
+
 
 #Patch pear mail to allow for certificate exceptions
 RUN sed -i "s/\$this->_socket_options = \$socket_options;/\$this->_socket_options = array('ssl' => array('verify_peer' => false, 'verify_peer_name' => false, 'allow_self_signed' => true));/" /usr/share/php/Net/SMTP.php
