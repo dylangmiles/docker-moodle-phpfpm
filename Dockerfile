@@ -29,6 +29,12 @@ RUN apt-get update -y && \
     php5-Intl \
     php-pear
 
+# Upgrade pear
+RUN pear upgrade --force --alldeps http://pear.php.net/get/PEAR-1.10.1
+    #&& pear clear-cache \
+    #&& pear update-channels \
+    #&& pear upgrade \
+    #&& pear upgrade-all
 
 # Install pear mail for some legacy applications
 RUN     pear install mail     \
