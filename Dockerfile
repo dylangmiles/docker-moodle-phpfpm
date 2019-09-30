@@ -43,6 +43,7 @@ RUN sed -i "s/;date.timezone =.*/date.timezone = UTC/" /etc/php5/fpm/php.ini && 
     sed -i "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/" /etc/php5/fpm/php.ini && \
     sed -i "s/display_errors = Off/display_errors = stderr/" /etc/php5/fpm/php.ini && \
     sed -i "s/upload_max_filesize = 2M/upload_max_filesize = 30M/" /etc/php5/fpm/php.ini && \
+    sed -i "s/post_max_size = 8M/post_max_size = 30M/" /etc/php5/fpm/php.ini && \
     sed -i "s/;opcache.enable=0/opcache.enable=1/" /etc/php5/fpm/php.ini && \
     sed -i "s/;opcache.memory_consumption=64/opcache.memory_consumption=128/" /etc/php5/fpm/php.ini && \
     sed -i "s/;opcache.max_accelerated_files=2000/opcache.max_accelerated_files=8000/" /etc/php5/fpm/php.ini && \
