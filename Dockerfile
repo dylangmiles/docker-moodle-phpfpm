@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
         libmcrypt-dev \
         libmemcached-dev \
         libtidy-dev \
+        libxslt-dev \
     #&& docker-php-ext-install -j$(nproc) pear \
     && docker-php-ext-install opcache \
     && docker-php-ext-install -j$(nproc) mysqli \        
@@ -32,7 +33,8 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) intl \
     && docker-php-ext-install -j$(nproc) xmlrpc \
     && pecl install imagick \
-    && docker-php-ext-enable imagick
+    && docker-php-ext-enable imagick \
+    && docker-php-ext-install xsl
     #&& docker-php-ext-install -j$(nproc) ldap \
     
 
