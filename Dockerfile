@@ -1,4 +1,4 @@
-FROM php:7.1-fpm-jessie
+FROM php:7.1-fpm-bionic
 
 MAINTAINER "Dylan Miles" <dylan.g.miles@gmail.com>
 
