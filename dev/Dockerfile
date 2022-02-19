@@ -1,4 +1,4 @@
-FROM dylangmiles/docker-moodle-phpfpm:php-7.1
+FROM dylangmiles/docker-moodle-phpfpm:php-7.3
 
 MAINTAINER "Dylan Miles" <dylan.g.miles@gmail.com>
 
